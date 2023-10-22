@@ -18,7 +18,7 @@ const Welcome = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        console.log("auth.currentUser : ", user);
+        // console.log("auth.currentUser : ", user);
       }
     });
 
@@ -35,6 +35,7 @@ const Welcome = () => {
         <button className="sign-in">
           <img style={{ width: 150, height: 45 }}
             onClick={() => {
+              // alert("click sign in")
               googleSignIn()
             }}
             src={GoogleSignin}

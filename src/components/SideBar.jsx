@@ -21,13 +21,13 @@ const Sidebar = () => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-                console.log("auth.currentUser : ", user);
+                // console.log("auth.currentUser : ", user);
             }
         });
 
     }
 
-    console.log("sidebar: ", user?.uid)
+    // console.log("sidebar: ", user?.uid)
 
     const googleSignIn = () => {
         const provider = new GoogleAuthProvider();
@@ -61,13 +61,13 @@ const Sidebar = () => {
                     {isChannelOpen && (
                         <ul onClick={(e) => e.stopPropagation()} style={{ marginTop: 5, borderTop: "3px solid blue" }}>
 
-                            <Link to="/channel/general" className="sign-in" style={{ textDecoration: "none" }}>
+                            <Link to="/chat-now/channel/general" className="sign-in" style={{ textDecoration: "none" }}>
                                 <li
                                     className={activeItem === 'general' ? 'active' : ''}
                                     onClick={() => handleItemClick('general')}
                                 > #General </li></Link>
 
-                            <Link to="/channel/random" className="sign-in" style={{ textDecoration: "none" }}>
+                            <Link to="/chat-now/channel/random" className="sign-in" style={{ textDecoration: "none" }}>
                                 <li
                                     className={activeItem === 'random' ? 'active' : ''}
                                     onClick={() => handleItemClick('random')}
@@ -84,7 +84,7 @@ const Sidebar = () => {
                                     return (
                                         <Link
                                             key={u.uid}
-                                            to={`/direct-message/${u.uid}`}
+                                            to={`/chat-now/direct-message/${u.uid}`}
                                             className="sign-in"
                                             style={{
                                                 textDecoration: "none",
